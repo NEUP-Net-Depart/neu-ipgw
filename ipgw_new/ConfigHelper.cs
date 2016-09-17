@@ -15,23 +15,33 @@ namespace ipgw_new
         private string appdata;
         public ConfigHelper()
         {
-            this.appdata = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
-            this.CreateDirectory();
+            //this.appdata = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
+            //this.CreateDirectory();
+            //this.appdata += "/2645/ipgw_new";
+            this.appdata = Environment.CurrentDirectory;
         }
-        private void CreateDirectory()
+        private bool CreateDirectory()
         {
-            if (!Directory.Exists(appdata + "/2645"))//如果不存在就创建2645文件夹
+            try
             {
-                Directory.CreateDirectory(appdata + "/2645");
+                if (!Directory.Exists(appdata + "/2645"))//如果不存在就创建2645文件夹
+                {
+                    Directory.CreateDirectory(appdata + "/2645");
+                }
+                if (!Directory.Exists(appdata + "/2645/ipgw_new"))//如果不存在就创建ipgw_new文件夹
+                {
+                    Directory.CreateDirectory(appdata + "/2645/ipgw_new");
+                }
             }
-            if (!Directory.Exists(appdata + "/2645/ipgw_new"))//如果不存在就创建ipgw_new文件夹
+            catch
             {
-                Directory.CreateDirectory(appdata + "/2645/ipgw_new");
+                return false;
             }
+            return true;
         }
         public bool Check()
         {
-            return File.Exists(appdata + "/2645/ipgw_new/ipgw.config");
+            return File.Exists(appdata + "/ipgw.config");
         }
         public bool SaveConfig(ipgwConfig myconfig)
         {
@@ -57,7 +67,7 @@ namespace ipgw_new
             xmldoc.AppendChild(root);
             try
             {
-                xmldoc.Save(appdata + "/2645/ipgw_new/ipgw.config");
+                xmldoc.Save(appdata + "/ipgw.config");
             }
             catch(Exception e)
             {
@@ -69,7 +79,7 @@ namespace ipgw_new
         {
             XmlDocument xmldoc = new XmlDocument();
             ipgwConfig myconfig = new ipgwConfig();
-            xmldoc.Load(appdata + "/2645/ipgw_new/ipgw.config");
+            xmldoc.Load(appdata + "/ipgw.config");
             XmlNode root = xmldoc.SelectSingleNode(xmldoc.DocumentElement.Name);
             myconfig.uid = root.SelectSingleNode("uid").InnerText;
             myconfig.pwd = root.SelectSingleNode("pwd").InnerText;
