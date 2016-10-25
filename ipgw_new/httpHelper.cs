@@ -113,7 +113,7 @@ namespace ipgw_new
         /// <param name="uid"></param>
         /// <param name="pwd"></param>
         /// <returns>返回的信息</returns>
-        public LoginResponse Login(string uid, string pwd)
+        public LoginResponse Login(string uid, string pwd, bool isMobile)
         {
             string postString = "username=" + uid + "&password=" + pwd 
                 + "&action=login&ac_id=1&user_ip=&nas_ip=&user_mac=&url=&save_me=0";
@@ -122,7 +122,10 @@ namespace ipgw_new
             HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(loginurl);
             myHttpWebRequest.ContentType = "application/x-www-form-urlencoded";
             myHttpWebRequest.ContentLength = postData.Length;
-            myHttpWebRequest.UserAgent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";
+            if (isMobile)
+                myHttpWebRequest.UserAgent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";
+            else
+                myHttpWebRequest.UserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 8_0_2 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12A366 Safari/600.1.4";
             myHttpWebRequest.Accept = "*/*";
             myHttpWebRequest.Method = "POST";
             myHttpWebRequest.CookieContainer = myCookieContainer;

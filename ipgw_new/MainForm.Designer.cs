@@ -43,6 +43,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.infoLable = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,52 +65,52 @@
             this.显示窗口ToolStripMenuItem,
             this.退出ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(145, 140);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(139, 130);
             // 
             // 断开网络ToolStripMenuItem
             // 
             this.断开网络ToolStripMenuItem.Name = "断开网络ToolStripMenuItem";
-            this.断开网络ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.断开网络ToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
             this.断开网络ToolStripMenuItem.Text = "断开网络";
             this.断开网络ToolStripMenuItem.Click += new System.EventHandler(this.断开网络ToolStripMenuItem_Click);
             // 
             // 连接网络ToolStripMenuItem
             // 
             this.连接网络ToolStripMenuItem.Name = "连接网络ToolStripMenuItem";
-            this.连接网络ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.连接网络ToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
             this.连接网络ToolStripMenuItem.Text = "连接网络";
             this.连接网络ToolStripMenuItem.Click += new System.EventHandler(this.连接网络ToolStripMenuItem_Click);
             // 
             // 获取信息ToolStripMenuItem
             // 
             this.获取信息ToolStripMenuItem.Name = "获取信息ToolStripMenuItem";
-            this.获取信息ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.获取信息ToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
             this.获取信息ToolStripMenuItem.Text = "获取信息";
             this.获取信息ToolStripMenuItem.Click += new System.EventHandler(this.获取信息ToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(141, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(135, 6);
             // 
             // 显示窗口ToolStripMenuItem
             // 
             this.显示窗口ToolStripMenuItem.Name = "显示窗口ToolStripMenuItem";
-            this.显示窗口ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.显示窗口ToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
             this.显示窗口ToolStripMenuItem.Text = "显示窗口";
             this.显示窗口ToolStripMenuItem.Click += new System.EventHandler(this.显示窗口ToolStripMenuItem_Click);
             // 
             // 退出ToolStripMenuItem
             // 
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
             // button2
             // 
             this.button2.AutoSize = true;
-            this.button2.Location = new System.Drawing.Point(267, 70);
+            this.button2.Location = new System.Drawing.Point(267, 52);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(77, 25);
             this.button2.TabIndex = 4;
@@ -120,7 +121,7 @@
             // button3
             // 
             this.button3.AutoSize = true;
-            this.button3.Location = new System.Drawing.Point(267, 113);
+            this.button3.Location = new System.Drawing.Point(267, 92);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(77, 25);
             this.button3.TabIndex = 5;
@@ -131,7 +132,7 @@
             // button4
             // 
             this.button4.AutoSize = true;
-            this.button4.Location = new System.Drawing.Point(267, 156);
+            this.button4.Location = new System.Drawing.Point(267, 135);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(77, 25);
             this.button4.TabIndex = 6;
@@ -152,7 +153,7 @@
             // button1
             // 
             this.button1.AutoSize = true;
-            this.button1.Location = new System.Drawing.Point(267, 26);
+            this.button1.Location = new System.Drawing.Point(267, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(77, 25);
             this.button1.TabIndex = 10;
@@ -160,11 +161,23 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button5
+            // 
+            this.button5.AutoSize = true;
+            this.button5.Location = new System.Drawing.Point(192, 176);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(152, 25);
+            this.button5.TabIndex = 11;
+            this.button5.Text = "模拟移动端连接网络";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(366, 213);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.infoLable);
             this.Controls.Add(this.button4);
@@ -197,6 +210,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem 获取信息ToolStripMenuItem;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button5;
     }
 }
 

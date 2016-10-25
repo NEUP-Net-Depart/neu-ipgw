@@ -169,7 +169,7 @@ namespace ipgw_new
 
         private void button3_Click(object sender, EventArgs e)
         {
-            LoginResponse t = this.hh.Login(myconfig.uid, myconfig.pwd);
+            LoginResponse t = this.hh.Login(myconfig.uid, myconfig.pwd, false);
             if (t.isSuccess)
             {
                 MessageBox.Show("网络已连接", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -207,7 +207,7 @@ namespace ipgw_new
 
         private void 连接网络ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LoginResponse t = this.hh.Login(myconfig.uid, myconfig.pwd);
+            LoginResponse t = this.hh.Login(myconfig.uid, myconfig.pwd, false);
             if (t.isSuccess)
             {
                 this.notifyIcon1.ShowBalloonTip(5000, "网络已连接", "网络已连接", ToolTipIcon.Info);
@@ -240,6 +240,19 @@ namespace ipgw_new
             ConfigForm cf = new ConfigForm();
             cf.ConfigChanged += new ConfigForm.ConfigChangedEventHandler(ConfigChanged);
             cf.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            LoginResponse t = this.hh.Login(myconfig.uid, myconfig.pwd, true);
+            if (t.isSuccess)
+            {
+                MessageBox.Show("移动端网络已连接", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.button4_Click(sender, e);
+            }
+            else
+                MessageBox.Show("移动端网络连接失败，" + t.info, "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
         }
     }
 }
