@@ -59,9 +59,9 @@ namespace ipgw_new
     class httpHelper
     {
         private CookieContainer myCookieContainer;
-        private string loginurl = "http://ipgw.neu.edu.cn:801/srun_portal_pc.php";
-        private string logouturl = "http://ipgw.neu.edu.cn:801/include/auth_action.php";
-        private string infourl = "http://ipgw.neu.edu.cn:801/include/auth_action.php";
+        private string loginurl = "https://ipgw.neu.edu.cn/srun_portal_pc.php";
+        private string logouturl = "https://ipgw.neu.edu.cn/include/auth_action.php";
+        private string infourl = "https://ipgw.neu.edu.cn/include/auth_action.php";
         public httpHelper()
         {
             this.myCookieContainer = new CookieContainer();
