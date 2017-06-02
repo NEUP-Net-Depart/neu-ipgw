@@ -69,7 +69,7 @@ namespace ipgw_new
             {
                 xmldoc.Save(appdata + "/ipgw.config");
             }
-            catch(Exception e)
+            catch(Exception)
             {
                 return false;
             }

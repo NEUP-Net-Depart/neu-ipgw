@@ -11,7 +11,7 @@ namespace ipgw_new
     static class Program
     {
 
-        static string version = "1.0.2.2";
+        static string version = "1.0.2.3";
 
         /// <summary>
         /// 应用程序的主入口点。

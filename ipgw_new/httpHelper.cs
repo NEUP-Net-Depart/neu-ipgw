@@ -89,7 +89,7 @@ namespace ipgw_new
             {
                 myHttpWebRequest.GetRequestStream().Write(postData, 0, postData.Length);
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 return false;
             }
@@ -122,7 +122,7 @@ namespace ipgw_new
             HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(loginurl);
             myHttpWebRequest.ContentType = "application/x-www-form-urlencoded";
             myHttpWebRequest.ContentLength = postData.Length;
-            if (isMobile)
+            if (!isMobile)
                 myHttpWebRequest.UserAgent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";
             else
                 myHttpWebRequest.UserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 8_0_2 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12A366 Safari/600.1.4";
@@ -191,7 +191,7 @@ namespace ipgw_new
             {
                 myHttpWebRequest.GetRequestStream().Write(postData, 0, postData.Length);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 InfoResponse t1 = new InfoResponse(false);
                 return t1;
